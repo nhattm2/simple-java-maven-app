@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine'
-            args '-v /home/bankplus/.m2:/root/.m2'
+            args '-e "http_proxy=http://10.60.135.36:8800" -e "https_proxy=http://10.60.135.36:8800"'
         }
     }
     stages {
