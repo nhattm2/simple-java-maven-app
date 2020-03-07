@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine'
-            args '-e "http_proxy=http://10.60.135.36:8800" -e "https_proxy=http://10.60.135.36:8800"'
+            args '-v /u01/cds/nhattm/maven/.m2:/root/.m2'
         }
     }
     stages {
